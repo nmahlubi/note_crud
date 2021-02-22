@@ -12,7 +12,19 @@ class NoteList extends StatelessWidget {
         },
         child: Icon(Icons.add),
       ),
-      body: Container(),
-    );
+      body: ListView.separated(
+        separatorBuilder: (__, ___) => Divider(height: 1, color: Colors.green),
+        itemBuilder: (__, index){
+            return ListTile(
+              title: Text(
+                'hello',
+              style: TextStyle(color: Theme.of(context).primaryColor),
+              ),
+              subtitle: Text('Last edited on 21/02/2021'),
+            );
+           },
+            itemCount: 30,
+          ),
+        );
   }
 }
